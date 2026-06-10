@@ -9,7 +9,7 @@
    --gray-color:#94a3b8;
      --main-font:'Inter', sans-serif;
     --title-font:'Plus Jakarta Sans', sans-serif;
-    --border-radius:80px;
+    --border-radius:20px;
     --transition:0.3s ease;
 
 }
@@ -25,6 +25,7 @@ body{
     color: var(--text-color);
     line-height: 1.6;
     overflow-x:hidden ;
+    padding-top: 90px;
     
 }
 a{
@@ -42,6 +43,10 @@ h1,h2,h3,h4,.navbar-brand{
     font-family: var(--title-font);
 }
   .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
    background: rgba(17, 24, 39, 0.85) !important;
    backdrop-filter: blur(12px);/* agit sur ce qu'il y a derriére l'élément */
    height: 65px;
@@ -56,10 +61,11 @@ h1,h2,h3,h4,.navbar-brand{
 .navbar-brand{
     font-size: 1.6rem;
     font-weight: 700;
-    color:var(--primary-color) !important ;
+    color:var(--text-color) !important ;
     display: flex;
     align-items: center;
     gap: 10px;
+  
 }
 .navbar-brand img{
     width: auto;
@@ -80,6 +86,9 @@ h1,h2,h3,h4,.navbar-brand{
     color: var(--text-color);
    
 }
+.navbar-brand .accent{
+    color: var(--primary-color);
+}
 
  .nav-link{
     color: var(--text-color) !important ;
@@ -96,17 +105,6 @@ h1,h2,h3,h4,.navbar-brand{
     color: var(--primary-color) !important ;
     background :transparent !important;
     
-}
-/*création du trait animé sous le lien*/
-.nav-link::after{
-    content: ""; /*crée un élement vide pour l'animation*/
-    position: absolute;
-    left: 0;
-    bottom: -5px;/*position sous le texte*/
-    width: 0%;
-    height: 2px;
-    background: var(--accent-color);
-    transition: var(--transition);
 }
 /*animation du trait au survol*/
 .nav-link:hover::after{
@@ -135,5 +133,330 @@ h1,h2,h3,h4,.navbar-brand{
     background: transparent;
     color: var(--primary-color) !important;
     border: 2px solid var(--primary-color);
+}
+/*section hero*/
+#hero{
+    padding-left: 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left !important;
+    background-image:  url("../images/hero.png") ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top:40px;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    /*flex-direction: row;*/
+}
+/*overlay sombre*/
+#hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,rgba(7,11,24,0.75)35%, rgba(7,11,24,0.45)60%, rgba(7,11,24,0.15)100%);
+    z-index: 1;
+    
+}
+#hero .container{
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin-left: 50px ;
+    margin-top: -50px;
+
+}
+/*Alignement asymétrique le texte est calé a gauche et prend 55% de l'espace*/
+#hero .container > h1,
+#hero .container > p,
+#hero .container > .hero-buttons{
+    text-align: left;
+    max-width: 700px;
+}
+#hero h1{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    margin-top: 0;
+    color: var(--text-color);
+    
+}
+#hero h1 span{
+    display: inline-block;
+    background: linear-gradient(135deg,var(--primary-color) 0%,var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#hero p{
+    margin-bottom: 25px;
+    font-size: 1.15rem;
+    color: var(--gray-color);
+}
+.hero-buttons{
+    margin-bottom: 40px;
+    display: flex;
+    gap: 15px;
+    
+}
+
+.hero-buttons .btn-primary{
+    background: var(--primary-color);
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+}
+.hero-buttons .btn-primary:hover{
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+.hero-buttons .btn-outline-primary{
+    background: rgba(15, 23, 42, 0.85);
+    color:white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    font-weight: 700;
+    backdrop-filter: blur(12px);
+}
+.hero-buttons .btn-outline-primary:hover{
+   background:rgba(139, 92, 246, 0.15) ;
+   border-color:var(--primary-color);
+   box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
+   transform: translateY(-3px);
+}
+/*stats*/
+#hero .row{
+   margin-top: 25px;
+   border-top: 1px solid rgba(255, 255, 255, 0.05);
+   padding-top: 25px;
+}
+#hero .row .col-md-4{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    text-align: left;
+    margin-bottom: 0;
+}
+#hero .row .col-md-4:nth-child(1) i{
+    color: var(--accent-color);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+}
+#hero .row .col-md-4:nth-child(2) i{
+    color: var(--primary-color);
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+}
+#hero .row .col-md-4:nth-child(3) i{
+    color: #6d28d9;
+    background: rgba(236, 72, 153, 0.08);
+    border: 1px solid rgba(236, 72, 153, 0.15);
+}
+#hero .row i {
+    font-size: 1.4rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#hero .row p{
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    margin: 0;
+}
+#how-it-works{
+    padding: 50px 0 ;
+}
+#how-it-works h2{
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+.bento-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    grid-auto-rows: minmax(200px, auto);
+}
+.wide-card{
+    grid-column: span 2;
+}
+.bento-card{
+    backdrop-filter: blur(10px);
+    background: var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: var(--transition);
+}
+.bento-card:hover{
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+.nombre{
+    color: var(--accent-color);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+.bento-card i{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.bento-card h3{
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+.bento-card p{
+    color: var(--gray-color);
+}
+ 
+#services{
+    padding: 60px 0;
+}
+#services h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight:800 ;
+    margin-bottom: 45px;
+}
+#services .row{
+    row-gap: 25px;
+    
+}
+.category-card{
+    backdrop-filter: blur(10px);
+    background: var(--dark-color);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    transition: var(--transition);
+    transition: var(--transition);
+    height: 100%;
+}
+.category-card i{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding: 0;
+}
+.category-card .description{
+    color: var(--gray-color);
+    font-size: .95rem;
+}
+.category-card span{
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+.category-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, .25);
+    border-color: var(--primary-color);
+}
+/*temoignage*/
+#carouselExample{
+    padding: 100px 0;
+}
+.temoin-card{
+    backdrop-filter: blur(10px);
+    max-width: 700px;
+    margin: auto;
+    background: var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+.temoin-card img{
+    width: 100px !important;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+}
+.temoin-card h4{
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+.temoin-card span{
+    color: var(--accent-color);
+}
+.temoin-card p{
+    color: var(--gray-color);
+    margin: 20px 0;
+}
+.star, .temoin-card i{
+    color: #facc15;
+}
+/*cta*/
+#cta{
+    padding: 80px 20px;
+    background-color:var(--background-color);
+    position: relative;
+    overflow: hidden;    
+}
+/*effet lumineux décoratif*/
+#cta::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 92, 246, 0.20);
+    filter: blur(120px);
+    top: -100px;
+    left: -100px;
+}
+.cta-card{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 60px 30px;
+    max-width: 800px;
+    margin: auto;
+    color: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.cta-card h2{
+    font-size:2.2rem ;
+    font-weight: 800;
+    margin-bottom: 15px;
+    
+}
+.cta-card h2 span{
+    color: var(--primary-color);
+}
+.cta-card p{
+    opacity: 0.8;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--gray-color);
+}
+#cta .btn-primary{
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-weight: 600;
+    display: inline-block;
+    background: linear-gradient(135deg,var(--primary-color),var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+#cta .btn-primary:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.45);
 }
 

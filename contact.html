@@ -12,7 +12,7 @@
 <body>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="AfriTalent" class="logo"><span>AfriTalent</span></a>
+    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="AfriTalent" class="logo">Afri<span class="accent">Talent</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,16 +42,17 @@
   </div>
 </nav>
 <main>
-  <section id="hero">
+  <section id="hero2">
    <div class="container py-5">
-    <h1>Contacter-nous</h1>
-    <p>Une question, un projet ? N'hésiter pas à nous écrire.</p>
+     <h1>Contacter-nous</h1>
+     <p>Une question ou un projet ? N'hésiter pas à nous écrire.</p>
    <div>
   </section>
   <section id="formulaire">
     <div class="container py-5">
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row g-4">
+        <div class="col-lg-6">
+        <div class=" contact-card">
           <h2>Envoyer-nous un message</h2>
       <form>
          <div class="mb-3"><label for="prenom" class="form-label" >Prénom  :</label><input type="text" class="form-control" id="prenom" name="prenom" required></div>
@@ -67,63 +68,74 @@
           </select>
         </div>  
         <div class="mb-3"><label for="message" class="form-label">Message :</label><textarea class="form-control" id="message" rows="5" ></textarea></div>
-        <button type="submit" class="btn-primary">Envoyer</button>
+        <button type="submit" class="contact-btn">Envoyer</button>
       </form>
     </div>
-    <div class="col-md-6">
+    </div>
+    <div class="col-lg-6">
+    <div class=" info-card">
       <h2>Nos coordonnées</h2>
-      <address>
-        <p><strong>AfriTalent</strong></p>
-        <p><strong>Email : </strong>contact@afritalent.com</p>
-        <p><strong> Téléphone :</strong> +221 33 123 45 67</p>
-        <P><strong>Adresse :</strong>Dakar, Sénégal ( Plateau, Rue 10)</P>
+      <div class="contact-info">
+        <p><i class="bi bi-envelope-fill"></i>contact@afritalent.com</p>
+        <p><i class="bi bi-telephone-fill"> </i> +221 33 123 45 67</p>
+        <P><i class="bi bi-geo-alt-fill"></i>Dakar, Sénégal ( Plateau, Rue 10)</P>
         
-      </address>
+      </div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.7084530938796!2d-17.437499126376405!3d14.672479775315809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1730010d66e1f%3A0x36b40da8c78629bd!2sDakar%20plateau!5e0!3m2!1sfr!2ssn!4v1779112385080!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
      </div>
+    </div>
     </section>
 </main>
 
 <footer class="bg-dark text-white p-4">
-  <div class="container">
-    <div class="col-md-4">
-       <h3>Afritalent</h3>
-       <p>Plateforme de freelances africains pour entreprises et starups.</p>
-
-    </div>
-    <div>
-      <h4>Liens utiles</h4>
-      <ul>
-      <li><a href="index.html">Acceuil</a></li>
-      <li><a href="about.html">A propos</a></li>
-      <li><a href="freelances.html">Freelance</a></li>
-      <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </div>
-    <div>
-    <h4>Ressources</h4>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="index.html">Tutoriels</a></li>
-    <li><a href="tarifs.html">FAQ</a></li>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <p>Email : conntact@afritalent.com</p>
-      <p>Tél : +221 77 465 84 38 </p>
-      <p>Adresse : Dakar/Sénégal</p>
-    </div>
-    <div>
-    <a href="instagram"><i class="bi bi-instagram"></i></a>
-    <a href="tiktok"><i class="bi bi-tiktok"></i></a>
-    <a href="twiter"><i class="bi bi-twitter-x"></i></a>
-    <a href="snapchat"><i class="bi bi-snapchat"></i></a>
-    </div>
-  
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="footer-brand">
+          <div class="footer-top">
+            <img src="images/logo.png" alt="lodo AfriTalent" class="footer-logo-img">
+            <h3 class="footer-logo">Afri<span>Talent</span></h3>
+          </div>
+          <p>Plateforme de freelances africains pour entreprises et starups.</p>
+        </div>
+      </div>
+      <div class="col-md-3" >
+         <h4>Liens utiles</h4>
+         <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i>Acceuil</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i>A propos</a></li>
+            <li><a href="freelances.html"><i class="bi bi-chevron-right"></i>Freelance</a></li>
+            <li><a href="tarifs.html"><i class="bi bi-chevron-right"></i>Tarifs</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right"></i>Blog</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+          </ul>
+         </div>
+       <div class="col-md-3">
+          <h4>Ressources</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html"><i class="bi bi-chevron-right"></i>Guide Freelance</a></li>
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i>Tutoriels</a></li>
+            <li><a href="tarifs.html"><i class="bi bi-chevron-right"></i>FAQ</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i>Centre d'aide</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Contact</h4>
+          <p>Email : contact@afritalent.com</p>
+          <p>Tél : +221 77 465 84 38 </p>
+          <p>Adresse : Dakar/Sénégal</p>
+          <div class="social-icons">
+              <a href="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="tiktok"><i class="bi bi-tiktok"></i></a>
+              <a href="twiter"><i class="bi bi-twitter-x"></i></a>
+              <a href="snapchat"><i class="bi bi-snapchat"></i></a>
+          </div>
+        </div> 
+      </div>
+      <hr>
     <p class="text-center mt-3">&copy; 2025 AfriTalent. Tous droits réservés.</p>
-  </div>
+  
 </footer>
 
     <script
