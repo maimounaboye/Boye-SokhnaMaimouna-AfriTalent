@@ -52,3 +52,44 @@ backtotop.addEventListener("click",() =>{
     })
 }); 
 }
+//fade in sections
+const fadeSections = document.querySelectorAll(".fade-section");
+const fadeObserver = new IntersectionObserver((entries) =>{
+    entries.forEach(entry =>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{
+    threshold: 0.2
+});
+fadeSections.forEach(section => {
+    fadeObserver.observe(section);
+});
+//compteurs animés
+const counters = document.querySelectorAll(".counter");
+const counterObserver = new IntersectionObserver((entries, observer) =>{
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            const counter = entry.target;
+            const target = parseInt(counter.dataset.target);
+            let count = 0;
+            const step = Math.max(1, Math.ceil(target/ 100)) ;
+            function update(){
+                count += step;
+                if(count >= target){
+                    counter.textContent = "+" + target.toLocaleString("fr-FR");
+                }else{
+                    counter.textContent = "+" + Math.floor(count).toLocaleString("fr-FR");
+                    requestAnimationFrame(update);
+                }
+            }
+            update();
+        }
+    });
+},{
+    threshold:0.5
+});
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});

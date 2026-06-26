@@ -1344,6 +1344,16 @@ body.light-mode footer a:hover{
     opacity: 1;
     visibility: visible;
 }
+/*fade-section*/
+.fade-section{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+.fade-section.show{
+    opacity: 1;
+    transform: translateY(0);
+} 
 
 
 /*pied de page*/
