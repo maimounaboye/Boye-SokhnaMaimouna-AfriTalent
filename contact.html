@@ -55,10 +55,16 @@
         <div class="col-lg-6">
         <div class=" contact-card">
           <h2>Envoyer-nous un message</h2>
-      <form>
-         <div class="mb-3"><label for="prenom" class="form-label" >Prénom  :</label><input type="text" class="form-control" id="prenom" name="prenom" required></div>
-        <div class="mb-3"><label for="nom" class="form-label" >Nom   :</label><input type="text" class="form-control" id="nom" name="nom" required></div>
-        <div class="mb-3"><label for="email" class="form-label">Adresse email :</label><input type="email" class="form-control" id="email" required></div>
+      <form id="contactForm" novalidate>
+         <div class="mb-3"><label for="prenom" class="form-label" >Prénom  :</label><input type="text" class="form-control" id="prenom" name="prenom" required>
+            <small id="prenomError" class="text-danger"></small>
+         </div>
+         <div class="mb-3"><label for="nom" class="form-label" >Nom   :</label><input type="text" class="form-control" id="nom" name="nom" required>
+          <small id="nomError" class="text-danger"></small>
+         </div>
+        <div class="mb-3"><label for="email" class="form-label">Adresse email :</label><input type="email" class="form-control" id="email" required>
+          <small id="emailError" class="text-danger"></small>
+        </div>
         <div class="mb-3"><label for="sujet" class="form-label"> Sujet :</label>
           <select name="sujet" id="sujet" class="form-select">
             <option value="">Choisir un sujet</option>
@@ -67,8 +73,12 @@
             <option value="Partenariat">Partenariat</option>
             <option value="autre">Autre</option>
           </select>
+          <small id="sujetError" class="text-danger"></small>
         </div>  
-        <div class="mb-3"><label for="message" class="form-label">Message :</label><textarea class="form-control" id="message" rows="5" ></textarea></div>
+        <div class="mb-3"><label for="message" class="form-label">Message :</label><textarea class="form-control" id="message" rows="5" ></textarea>
+          <small id="messageError" class="text-danger"></small>
+        </div> 
+        <p id="successMessage" class="text-sucess fw bold"></p>
         <button type="submit" class="contact-btn">Envoyer</button>
       </form>
     </div>

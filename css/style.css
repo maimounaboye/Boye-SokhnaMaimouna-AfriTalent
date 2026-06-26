@@ -848,6 +848,19 @@ h1,h2,h3,h4,.navbar-brand{
     transform: translateY(-3px);
     background: var(--primary-color);
 }
+/*css commit8*/
+.filter-btn{
+    padding: 10px 22px;
+    margin: 5px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+.filter-btn.active{
+    background: var(--dark-color);
+    color: white;
+}
 #freelances-List .col-12,
  #freelances-List .col-md-6, 
  #freelances-List .col-lg-4{
@@ -1078,6 +1091,17 @@ h1,h2,h3,h4,.navbar-brand{
 }
 .form-control::placeholder{
     color: rgba(148, 168, 184, 0.5);
+}
+/*commit8*/
+.text-danger{
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+#successMessage{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
 }
 .contact-btn{
     background: linear-gradient(135deg,var(--primary-color),var(--secondary-color));
