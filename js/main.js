@@ -1,3 +1,4 @@
+//Bouton permettant de changer le théme
 const themeToggle = document.getElementById("theme-toggle");
 //fonction pour mettre à jour l'icone du bouton
 function updateIcon(){
@@ -9,7 +10,7 @@ function updateIcon(){
         icon.className = "bi bi-moon-fill";
     }
 }
-//dark mode au changement
+//Applique le théme  au changement de la page
 if (localStorage.getItem("theme") ==="light"){
     document.body.classList.add("light-mode");
 }
@@ -32,10 +33,10 @@ window.addEventListener("scroll",() =>{
     if(window.scrollY > 50){
         navbar.classList.add("navbar-scrolled");
     }else{
-         navbar.classList.remove("navbar-scrolled");
+        navbar.classList.remove("navbar-scrolled");
     }
 });
-//Gestion du bouton du bas
+//Gestion du bouton retour en haut
 const  backtotop = document.getElementById("backtotop");
 if(backtotop){
   window.addEventListener("scroll",() => {
@@ -52,7 +53,7 @@ backtotop.addEventListener("click",() =>{
     })
 }); 
 }
-//fade in sections
+//Animations des sections
 const fadeSections = document.querySelectorAll(".fade-section");
 const fadeObserver = new IntersectionObserver((entries) =>{
     entries.forEach(entry =>{
@@ -75,6 +76,7 @@ const counterObserver = new IntersectionObserver((entries, observer) =>{
             const target = parseInt(counter.dataset.target);
             let count = 0;
             const step = Math.max(1, Math.ceil(target/ 100)) ;
+            //met à jour progressivement la valeur du compteur
             function update(){
                 count += step;
                 if(count >= target){
@@ -150,7 +152,7 @@ if(contactForm){
         } 
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
          if(email.value.trim() === "") {
-            emailError.textContent="l'adrese mail est obligatoire.";
+            emailError.textContent="l'adresse mail est obligatoire.";
             valide = false;
         } 
         else if(!regex.test(email.value.trim())){
@@ -175,3 +177,8 @@ if(contactForm){
         }
     }); 
 }    
+//Année dynamique du footer Affiche automatiquement l'année actuelle dans le copyright
+const currentYear = document.getElementById("currentYear");
+if(currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
